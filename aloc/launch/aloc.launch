@@ -1,0 +1,18 @@
+<launch>
+    <node pkg="aloc" name="aloc" type="aloc.py" output="screen">
+        <param name="port_name" value="/dev/ALOC" />
+        <param name="BASELINE" value="0.905" /> <!--ベースラインは対角の長さを表す[m] A型-->
+        <!-- <param name="BASELINE" value="0.707" /> <!--ベースラインは対角の長さを表す[m] B型-->
+        <param name="GAIN" value="1" /> <!--ゲイン 0:海仕様 1:水槽仕様-->
+        <param name="TRANSMITION_LEVEL" value="1" /> <!--送信のレベル 0:海仕様 1:水槽仕様-->
+        <param name="CORRELATION_THRESHOLD" value="50" />
+        <param name="CORRELATION_PEAK_RATIO" value="5" />
+        <param name="water_sound_speed" value="1500.0" /> <!--音速初期値[m/s] DVL等から音速をもらえない場合はこれが適用され続ける-->
+        <param name="my_depth" value="0.0" /> <!--深度初期値[m] 深度計から値がもらえないとこれが適用され続ける。沈めっぱなしの場合は設置深度を入れておくとよい-->
+        <param name="depth_offset" value="-0.65" /> <!--深度計とALOCの取り付け位置の深度差-->
+        <param name="roll" value="0.0" /> <!--初期ロール[deg] センサから値が取れない時とかのため-->
+        <param name="pitch" value="0.0" />
+        <param name="heading" value="0.0" />
+        <param name="rate" value="5" /> <!--データ更新レート[Hz]-->
+    </node>
+</launch>

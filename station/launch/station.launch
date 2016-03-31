@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="station" name="station" type="station.py" output="screen">
+        <param name="COMMAND_TIMEOUT" value="60.0" /> <!--[sec] バイパスするコマンドのタイムアウト-->
+        <param name="rate" value="5" /> <!--データ更新レート[Hz]-->
+    </node>
+</launch>

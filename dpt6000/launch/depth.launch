@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="dpt6000" name="depth" type="depth.py" output="screen">
+        <param name="port_name" value="/dev/Depth" />
+        <param name="ATOMOSPERIC_PRESSURE" value="0.101325" /> <!--大気圧[MPa]-->
+        <param name="WATER_DENSITY" value="1030.0" /> <!--水の密度[kg/m^3]-->
+        <param name="rate" value="5" /> <!--データ更新レート[Hz]-->
+    </node>
+</launch>

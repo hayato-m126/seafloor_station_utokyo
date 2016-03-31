@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="atm926" name="modem" type="modem.py" output="screen">
+        <param name="port_name" value="/dev/Modem" />
+        <param name="SOUND_RATE" value="5" /> <!--通信レート 2～8(140bps～2400bps) デフォルト5-->
+        <param name="SEND_POWER" value="1" /> <!--送波ゲイン 1～8(-21～0dBまで3dB刻み) 空中では1にしておく-->
+        <param name="MY_ID" value="1" /> <!--自分のID-->
+        <param name="PAIR_ID" value="0" /> <!--通信相手のID 船上局が0の想定-->
+        <param name="rate" value="5" /> <!--データ更新レート[Hz]-->
+    </node>
+</launch>

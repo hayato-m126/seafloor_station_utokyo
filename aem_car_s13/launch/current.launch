@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="aem_car_s13" name="current" type="current.py" output="screen">
+        <param name="port_name" value="/dev/Current" />
+        <param name="water_salinity" value="34.0" /> <!--塩分濃度初期値CTD等のセンサで値が拾えるようになれば中で更新する。拾えない場合はこの初期値で固定-->
+        <param name="depth" value="0.0" /> <!--自分の深度初期値(深度計から値が上がってこない事を想定して沈めっぱなしにする場合は目標深度入れておくと安全-->
+        <param name="rate" value="1" /> <!--データ更新レート[Hz]-->
+    </node>
+</launch>

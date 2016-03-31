@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="os5000" name="gyro" type="gyro.py" output="screen">
+        <param name="port_name" value="/dev/OceanServer" />
+        <param name="OUTPUT_RATE" value="\x1B\x52\x35\r\n" /> <!--更新レート[Hz] <ESC>R5<crcf> 5Hz (max: 40Hz)-->
+        <param name="OUTPUT_DATA" value="\x1B\x58\x31\x35\r\n" /> <!--出力データの指定 <ESC>X15<crcf> output yaw, pitch, roll, temperature)-->
+        <param name="OUTPUT_FORMAT" value="\x1B\x2A\x32\r\n" /> <!--出力フォーマット <ESC>*2<crcf> format 2 '$OHPR,heading,pitch,roll,temperature*num'-->
+        <!-- <param name="MOUNT" value="\x1B\x45\x36\r\n" /> <!--取り付け向き <ESC>E6<crcf> マニュアルの取り付け向き参照-->
+        <param name="roll_offset" value="0.0" /> <!--斜度計の値に合わせるためのオフセット-->
+        <param name="pitch_offset" value="0.0" /> <!--斜度計の値に合わせるためのオフセット-->
+        <param name="heading_offset" value="0.0" /> <!--斜度計の値に合わせるためのオフセット-->
+        <param name="rate" value="5" /> <!--データ更新レート[Hz]-->
+    </node>
+</launch>
